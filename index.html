@@ -15,58 +15,67 @@
 
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <link rel="icon" type="image/png" href="visual/USC Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 
 <body>
+<!-- Dark Mode Toggle -->
+<div class="dark-mode-toggle">
+    <button id="darkModeBtn" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+        <span class="sun-icon">☀️</span>
+        <span class="moon-icon">🌙</span>
+    </button>
+</div>
 <table style="width:100%;max-width:850px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 <tr style="padding:0px">
     <td style="padding:0px">
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         <tr style="padding:0px">
-            <td style="padding:2.5%;width:70%;vertical-align:middle">
-                <p style="text-align:center">
-                    <name>Toan Nguyen</name>
+            <td style="padding:2.5%;width:25%;max-width:25%;vertical-align:top">
+                <img style="width:100%;max-width:100%;border-radius:50%;object-fit:cover;aspect-ratio:1/1;border:3px solid #1e3a8a;box-shadow: 0 4px 16px rgba(30, 58, 138, 0.2);" src="visual/VinhHy.jpeg">
+            </td>
+            <td style="padding:2.5%;width:75%;vertical-align:top">
+                <p style="margin-top:0">
+                    <name style="font-size:42px">Toan Nguyen</name>
                 </p>
-                <p style="text-align:center">
-                    /twan ŋwɪn/
+                <p style="font-size:18px;margin-top:10px;margin-bottom:20px;color:#666">
+                    CS PhD at USC
                 </p>
+                <div style="margin-bottom:25px">
+                    <a href="./visual/CV.pdf" title="CV" style="margin-right:20px"><i class="fas fa-file-alt" style="font-size:32px"></i></a>
+                    <a href="https://scholar.google.com/citations?user=PhqGEY8AAAAJ" title="Google Scholar" style="margin-right:20px"><i class="fas fa-graduation-cap" style="font-size:32px"></i></a>
+                    <a href="https://github.com/toannguyen1904" title="GitHub" style="margin-right:20px"><i class="fab fa-github" style="font-size:32px"></i></a>
+                    <a href="https://x.com/ToanNguyenCS" title="Twitter" style="margin-right:20px"><i class="fab fa-twitter" style="font-size:32px"></i></a>
+                    <a href="https://www.linkedin.com/in/toannguyen1904/" title="LinkedIn"><i class="fab fa-linkedin" style="font-size:32px"></i></a>
+                </div>
+            </td>
+        </tr>
+        <tr style="padding:0px">
+            <td colspan="2" style="padding:2.5%">
                 <!-- <p>
-                    <font color="#990000">🔥 I am actively seeking a PhD position with a research focus on the intersection of Robot Learning and Computer Vision.</font>
+                    <font color="#1e3a8a">🔥 I am actively seeking a PhD position with a research focus on the intersection of Robot Learning and Computer Vision.</font>
                 </p> -->
-                <p>
+                <p style="font-size:16px">
                     First-Year Ph.D. Student </a></b>
                     <br>
-                    Department of Computer Science, <b><a href="https://www.usc.edu/"> University of Southern California </a></b>
+                    Department of Computer Science, <b><a href="https://www.usc.edu/" style="font-size:16px"> University of Southern California </a></b>
                     <br>
-                    <b><a href="https://usc-gvl.github.io/index.html"> Geometry, Vision, and Learning Lab </a></b> & <b><a href="https://slurm-lab-usc.github.io/"> SLURM Lab </a></b>
+                    <b><a href="https://usc-gvl.github.io/index.html" style="font-size:16px"> Geometry, Vision, and Learning Lab </a></b> & <b><a href="https://slurm-lab-usc.github.io/" style="font-size:16px"> SLURM Lab </a></b>
                     <br><br>
                     <b>Email:</b> tientoan [at] usc [dot] edu
                 </p>
 
-                <p>
-                    I am co-advised by <b><a href="https://yuewang.xyz/">Prof. Yue Wang</a></b> and <b><a href="https://danielseita.github.io/">Prof. Daniel Seita</a></b>. Prior to joining USC, I was an AI Resident at the <b><a href="https://fpt-aicenter.com/en/ai-by-fpt-software/publication-by-aic">FPT AI Center</a></b>. I graduated with a bachelor's degree in Computer Science at <b><a href="https://en.hcmus.edu.vn/">Ho Chi Minh City University of Science</a></b>.
+                <p style="font-size:16px">
+                    I am co-advised by <b><a href="https://yuewang.xyz/" style="font-size:16px">Prof. Yue Wang</a></b> and <b><a href="https://danielseita.github.io/" style="font-size:16px">Prof. Daniel Seita</a></b>. Prior to joining USC, I was an AI Resident at the <b><a href="https://www.linkedin.com/company/fpt-software-ai-center" style="font-size:16px">FPT AI Center</a></b>. I graduated with a bachelor's degree in Computer Science at <b><a href="https://en.hcmus.edu.vn/" style="font-size:16px">Ho Chi Minh City University of Science</a></b>.
                     <br><br>
                     <b>I'm interested in anything that helps robots learn!</b>
                 </p>
-
-                <p style="text-align:center">
-                    <b>
-                    <a href="./visual/CV.pdf">CV</a> &nbsp/&nbsp
-                    <a href="https://scholar.google.com/citations?user=PhqGEY8AAAAJ"> Google Scholar</a> &nbsp/&nbsp
-                    <a href="https://github.com/toannguyen1904"> Github </a> &nbsp/&nbsp
-                    <a href="https://x.com/ToanNguyenCS">Twitter</a> &nbsp/&nbsp
-                    <a href="https://www.linkedin.com/in/toannguyen1904/">LinkedIn</a>
-                    </b>
-                </p>
-
-            </td>
-            <td style="padding:2.5%;width:30%;max-width:30%">
-                <img style="width:80%;max-width:80%;border-radius:50%;object-fit:cover;object-position:center 100%;aspect-ratio:1/1;border:2px solid #990000" src="visual/VinhHy.jpeg">
             </td>
         </tr>
         </tbody></table>
+
 
         <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
@@ -88,37 +97,37 @@
         <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         <tr>
             <td style="padding:20px;width:100%;vertical-align:middle">
-                <heading><b><font color="990000">News</font></b></heading>
+                <heading><b><font color="1e3a8a">News</font></b></heading>
                 <p>
                 <li style="margin: 5px;" >
-                    <font color="990000">2025-03:</font> I accept the CS Ph.D. offer from the University of Southern California for Fall 2025 and will be working with <a href="https://yuewang.xyz/">Prof. Yue Wang</a> and <a href="https://danielseita.github.io/">Prof. Daniel Seita</a>! 🦾 🦿
+                    <font color="1e3a8a">2025-03:</font> I accept the CS Ph.D. offer from the University of Southern California for Fall 2025 and will be working with <a href="https://yuewang.xyz/">Prof. Yue Wang</a> and <a href="https://danielseita.github.io/">Prof. Daniel Seita</a>! 🦾 🦿
                 </li>
                 <li style="margin: 5px;" >
-                    <font color="990000">2024-12:</font> I attend ACCV 2024, hosted in my home country. My beloved Hanoi! 🇻🇳 ⛩️
+                    <font color="1e3a8a">2024-12:</font> I attend ACCV 2024, hosted in my home country. My beloved Hanoi! 🇻🇳 ⛩️
                 </li>
                 <li style="margin: 5px;" >
-                    <font color="990000">2024-09:</font> I attend ECCV 2024 in-person and give one oral and one poster presentation. Hello Milan! 🇮🇹 🤌
+                    <font color="1e3a8a">2024-09:</font> I attend ECCV 2024 in-person and give one oral and one poster presentation. Hello Milan! 🇮🇹 🤌
                 </li>
                 <li style="margin: 5px;" >
-                    <font color="990000">2024-07:</font> One paper on language-driven 6-DoF grasp detection gets accepted to <a href="https://eccv.ecva.net/Conferences/2024">ECCV 2024</a> as <font color="#990000">Oral</font> presentation!!!
+                    <font color="1e3a8a">2024-07:</font> One paper on language-driven 6-DoF grasp detection gets accepted to <a href="https://eccv.ecva.net/Conferences/2024">ECCV 2024</a> as <font color="#1e3a8a">Oral</font> presentation!!!
                 </li>
                 <li style="margin: 5px;" >
-                    <font color="990000">2024-06:</font> One paper on crowd navigation gets accepted to <a href="https://iros2024-abudhabi.org/">IROS 2024</a>.
+                    <font color="1e3a8a">2024-06:</font> One paper on crowd navigation gets accepted to <a href="https://iros2024-abudhabi.org/">IROS 2024</a>.
                 </li>
                 <li style="margin: 5px;" >
-                    <font color="990000">2024-01:</font> Two papers on text-based affordance-pose learning and open-vocab affordance detection get accepted to <a href="https://2024.ieee-icra.org/">ICRA 2024</a>.
+                    <font color="1e3a8a">2024-01:</font> Two papers on text-based affordance-pose learning and open-vocab affordance detection get accepted to <a href="https://2024.ieee-icra.org/">ICRA 2024</a>.
                 </li>
                 <li style="margin: 5px;" >
-                    <font color="990000">2023-09:</font> One paper on language-driven scene synthesis gets accepted to <a href="https://neurips.cc/Conferences/2023">NeurIPS 2023</a>.
+                    <font color="1e3a8a">2023-09:</font> One paper on language-driven scene synthesis gets accepted to <a href="https://neurips.cc/Conferences/2023">NeurIPS 2023</a>.
                 </li>
                 <li style="margin: 5px;" >
-                    <font color="990000">2023-09:</font> I attend IROS 2023 in-person and give one oral and one poster presentation. First time abroad, Hello Michigan!!! 🇺🇸 🌆
+                    <font color="1e3a8a">2023-09:</font> I attend IROS 2023 in-person and give one oral and one poster presentation. First time abroad, Hello Michigan!!! 🇺🇸 🌆
                 </li>
                 <li style="margin: 5px;" >
-                    <font color="990000">2023-09:</font> Our paper is nominated for <font color="#990000">best overall paper</font> and <font color="#990000">best student paper awards</font> at <a href="https://ieee-iros.org/">IROS 2023</a>!!! This is a great honor!
+                    <font color="1e3a8a">2023-09:</font> Our paper is nominated for <font color="#1e3a8a">best overall paper</font> and <font color="#1e3a8a">best student paper awards</font> at <a href="https://ieee-iros.org/">IROS 2023</a>!!! This is a great honor!
                 </li>
                 <li style="margin: 5px;" >
-                    <font color="990000">2023-06:</font> One paper on open-vocabulary affordance detection gets accepted to <a href="https://ieee-iros.org/">IROS 2023</a>.
+                    <font color="1e3a8a">2023-06:</font> One paper on open-vocabulary affordance detection gets accepted to <a href="https://ieee-iros.org/">IROS 2023</a>.
                 </li>
                 </p>
             </td>
@@ -128,7 +137,9 @@
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         <tr>
             <td style="padding:20px;width:100%;vertical-align:middle">
-                <heading><b><font color="990000">Publications</font></b></heading>
+                <div class="section-header">
+                    <heading><b><font color="1e3a8a">Publications</font></b></heading>
+                </div>
             </td>
         </tr>
         </tbody></table>
@@ -136,172 +147,265 @@
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         
         <tr>
-            <td style="padding:20px;width:30%;max-width:30%" align="center">
-                <video style="width:100%;max-width:100%" autoplay loop playsinline muted>
-                    <source src="visual/lgrasp6d.mp4" type="video/mp4">
-                </video>
-            </td>
-            <td width="75%" valign="center">
-                <papertitle>Language-Driven 6-DoF Grasp Detection Using Negative Prompt Guidance</papertitle>
-                <br>
-                <strong>Tien Toan Nguyen</strong>,
-                <a href="https://scholar.google.com/citations?user=qyExc4QAAAAJ">Minh Nhat Vu</a>,
-                <a href="https://scholar.google.com/citations?user=unbPvWAAAAAJ">Baoru Huang</a>,
-                <a href="https://scholar.google.com/citations?user=CUpnG-YAAAAJ">An Vuong</a>,
-                <a href="https://scholar.google.com/citations?user=NSWI3OwAAAAJ">Quan Vuong</a>,
-                <a href="https://scholar.google.com/citations?user=M7T55ooAAAAJ">Dung Nguyen</a>,
-                <a href="https://scholar.google.com/citations?user=8ck0k_UAAAAJ">Ngan Le</a>,
-                <a href="https://scholar.google.at/citations?user=CM2qJSoAAAAJ">Thieu Vo</a>,
-                <a href="https://scholar.google.co.uk/citations?user=gEbaF0sAAAAJ">Anh Nguyen</a>
-                <br>
-                <em>European Conference on Computer Vision (<strong>ECCV</strong>), 2024</em> <span class="tag">Oral</span>
-                <br>
-                <b>
-                <a href="https://arxiv.org/abs/2407.13842">arXiv</a> |
-                <a href="https://airvlab.github.io/grasp-anything/">Project</a> |
-                <a href="https://github.com/Fsoft-AIC/Language-Driven-6-DoF-Grasp-Detection-Using-Negative-Prompt-Guidance">Code</a>
-                </b>
-                <br>
-                <p> We introduce a novel diffusion model incorporating the new concept of negative prompt guidance learning to tackle the task of 6-DoF grasp detection in cluttered point clouds. </p>
+            <td style="padding:0px 20px 20px 20px;">
+                <div class="publication-card published">
+                    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;"><tbody>
+                    <tr>
+                        <td style="padding:8px;width:30%;max-width:30%" align="center">
+                            <div class="paper-image-container">
+                                <img style="width:100%;max-width:100%" src="visual/robomemo.png" alt="dise">
+                            </div>
+                        </td>
+                        <td style="padding:8px;width:70%;" valign="top">
+                            <papertitle>Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric Perspective</papertitle>
+                            <br>
+                            <a href="https://scholar.google.com/citations?user=LZb_-BwAAAAJ">Nhat Chung</a>,
+                            <a href="https://scholar.google.com/citations?user=mJuHh7UAAAAJ">Taisei Hanyu</a>,
+                            <strong>Toan Nguyen</strong>,
+                            <a href="https://scholar.google.com/citations?user=nsoYvw8AAAAJ">Huy Le</a>,
+                            <a href="https://uark-aicv.github.io/team/frederick_bumgarner.html">Frederick Bumgarner</a>,
+                            <a href="https://scholar.google.com/citations?user=_NIyeykAAAAJ">Duy Nguyen Ho Minh</a>,
+                            <a href="https://scholar.google.com/citations?user=Iyvx8vcAAAAJ">Khoa Vo</a>,
+                            <a href="https://scholar.google.com/citations?user=TF2LRvMAAAAJ">Kashu Yamazaki</a>,
+                            <a href="https://scholar.google.com/citations?user=jGiFLP8AAAAJ">Chase Rainwater</a>,
+                            <a href="https://scholar.google.com/citations?user=9luXdEIAAAAJ">Tung Kieu</a>,
+                            <a href="https://scholar.google.com/citations?user=gEbaF0sAAAAJ">Anh Nguyen</a>,
+                            <a href="https://scholar.google.com/citations?user=8ck0k_UAAAAJ">Ngan Le</a>
+                            <br>
+                            <span class="venue-badge tier1">AAAI 2025</span>
+                            <br>
+                            <!-- <p style="margin-top:8px;margin-bottom:0;"> We rethink the progression of memory state in robotic manipulation from an object-centric perspective. </p> -->
+                        </td>
+                    </tr>
+                    </tbody></table>
+                </div>
             </td>
         </tr>
         
         <tr>
-            <td style="padding:20px;width:30%;max-width:30%" align="center">
-                <img style="width:100%;max-width:100%" src="visual/habicrowd.gif" alt="dise">
-            </td>
-            <td width="75%" valign="center">
-                <papertitle>HabiCrowd: A High Performance Simulator for Crowd-Aware Visual Navigation</papertitle>
-                <br>
-                <a href="https://scholar.google.com/citations?user=CUpnG-YAAAAJ">An Vuong</a>,
-                <strong>Tien Toan Nguyen</strong>,
-                <a href="https://scholar.google.com/citations?user=qyExc4QAAAAJ">Minh Nhat Vu</a>,
-                <a href="https://scholar.google.com/citations?user=unbPvWAAAAAJ">Baoru Huang</a>,
-                <a href="https://scholar.google.com/citations?user=M7T55ooAAAAJ">Dung Nguyen</a>,
-                <a href="https://scholar.google.com/citations?user=vJYe5lkAAAAJ">Binh Huynh</a>,
-                <a href="https://scholar.google.at/citations?user=CM2qJSoAAAAJ">Thieu Vo</a>,
-                <a href="https://scholar.google.co.uk/citations?user=gEbaF0sAAAAJ">Anh Nguyen</a>
-                <br>
-                <em>IEEE/RSJ International Conference on Intelligent Robots and Systems (<strong>IROS</strong>), 2024</em>
-                <br>
-                <b>
-                <a href="https://arxiv.org/abs/2306.11377">arXiv</a> |
-                <a href="https://habicrowd.github.io/">Project</a>|
-                <a href="https://github.com/Fsoft-AIC/HabiCrowd">Code</a>
-                </b>
-                <br>
-                <p> We introduce HabiCrowd, a new dataset and benchmark for crowd-aware visual navigation that surpasses other benchmarks in terms of human diversity and computational utilization. </p>
-            </td>
-        </tr>
-
-        <tr>
-            <td style="padding:20px;width:30%;max-width:30%" align="center">
-                <img style="width:100%;max-width:100%" src="visual/3dapnet.png" alt="dise">
-            </td>
-            <td width="75%" valign="center">
-                <papertitle>Language-Conditioned Affordance-Pose Detection in 3D Point Clouds</papertitle>
-                <br>
-                <strong>Tien Toan Nguyen</strong>,
-                <a href="https://scholar.google.com/citations?user=qyExc4QAAAAJ">Minh Nhat Vu</a>,
-                <a href="https://scholar.google.com/citations?user=unbPvWAAAAAJ">Baoru Huang</a>,
-                <a href="https://scholar.google.com/citations?user=TsjvwzgAAAAJ">Tuan Vo</a>,
-                <a>Vy Truong</a>,
-                <a href="https://scholar.google.com/citations?user=8ck0k_UAAAAJ">Ngan Le</a>,
-                <a href="https://scholar.google.at/citations?user=CM2qJSoAAAAJn">Thieu Vo</a>,
-                <a href="https://scholar.google.com/citations?user=UA_83MUAAAAJ">Bac Le</a>,
-                <a href="https://scholar.google.co.uk/citations?user=gEbaF0sAAAAJ">Anh Nguyen</a>
-                <br>
-                <em>IEEE International Conference on Robotics and Automation (<strong>ICRA</strong>), 2024</em>
-                <br>
-                <b>
-                <a href="https://arxiv.org/abs/2309.10911">arXiv</a> |
-                <a href="https://3dapnet.github.io/">Project</a> |
-                <a href="https://github.com/Fsoft-AIC/Language-Conditioned-Affordance-Pose-Detection-in-3D-Point-Clouds">Code</a>
-                </b>
-                <br>
-                <p> We address the task of language-driven affordance-pose detection in 3D point clouds. Our method simultaneously detect open-vocabulary affordances and generate affordance-specific 6-DoF poses. </p>
+            <td style="padding:0px 20px 20px 20px;">
+                <div class="publication-card published">
+                    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;"><tbody>
+                    <tr>
+                        <td style="padding:8px;width:30%;max-width:30%" align="center">
+                            <div class="paper-image-container">
+                                <video style="width:100%;max-width:100%" autoplay loop playsinline muted>
+                                    <source src="visual/lgrasp6d.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </td>
+                        <td style="padding:8px;width:70%;" valign="top">
+                            <papertitle>Language-Driven 6-DoF Grasp Detection Using Negative Prompt Guidance</papertitle>
+                            <span class="award-badge oral">🏆 ORAL PRESENTATION</span>
+                            <br>
+                            <strong>Toan Nguyen</strong>,
+                            <a href="https://scholar.google.com/citations?user=qyExc4QAAAAJ">Minh Nhat Vu</a>,
+                            <a href="https://scholar.google.com/citations?user=unbPvWAAAAAJ">Baoru Huang</a>,
+                            <a href="https://scholar.google.com/citations?user=CUpnG-YAAAAJ">An Vuong</a>,
+                            <a href="https://scholar.google.com/citations?user=NSWI3OwAAAAJ">Quan Vuong</a>,
+                            <a href="https://scholar.google.com/citations?user=M7T55ooAAAAJ">Dung Nguyen</a>,
+                            <a href="https://scholar.google.com/citations?user=8ck0k_UAAAAJ">Ngan Le</a>,
+                            <a href="https://scholar.google.at/citations?user=CM2qJSoAAAAJ">Thieu Vo</a>,
+                            <a href="https://scholar.google.co.uk/citations?user=gEbaF0sAAAAJ">Anh Nguyen</a>
+                            <br>
+                            <span class="venue-badge tier1">ECCV 2024</span>
+                            <br>
+                            <div class="paper-links">
+                                <a href="https://arxiv.org/abs/2407.13842">📄 arXiv</a>
+                                <a href="https://airvlab.github.io/grasp-anything/">🌐 Project</a>
+                                <a href="https://github.com/Fsoft-AIC/Language-Driven-6-DoF-Grasp-Detection-Using-Negative-Prompt-Guidance">💻 Code</a>
+                            </div>
+                            <!-- <p style="margin-top:8px;margin-bottom:0;"> We introduce a novel diffusion model incorporating the new concept of negative prompt guidance learning to tackle the task of 6-DoF grasp detection in cluttered point clouds. </p> -->
+                        </td>
+                    </tr>
+                    </tbody></table>
+                </div>
             </td>
         </tr>
 
         <tr>
-            <td style="padding:20px;width:30%;max-width:30%" align="center">
-                <img style="width:100%;max-width:100%" src="visual/openkd.png" alt="dise">
-            </td>
-            <td width="75%" valign="center">
-                <papertitle>Open-Vocabulary Affordance Detection using Knowledge Distillation and Text-Point Correlation</papertitle>
-                <br>
-                <a href="https://scholar.google.com/citations?user=TsjvwzgAAAAJ">Tuan Vo</a>,
-                <a href="https://scholar.google.com/citations?user=qyExc4QAAAAJ">Minh Nhat Vu</a>,
-                <a href="https://scholar.google.com/citations?user=unbPvWAAAAAJ">Baoru Huang</a>,
-                <strong>Tien Toan Nguyen</strong>,
-                <a href="https://scholar.google.com/citations?user=8ck0k_UAAAAJ">Ngan Le</a>,
-                <a href="https://scholar.google.at/citations?user=CM2qJSoAAAAJn">Thieu Vo</a>,
-                <a href="https://scholar.google.co.uk/citations?user=gEbaF0sAAAAJ">Anh Nguyen</a>
-                <br>
-                <em>IEEE International Conference on Robotics and Automation (<strong>ICRA</strong>), 2024</em>
-                <br>
-                <b>
-                <a href="https://arxiv.org/abs/2309.10932">arXiv</a> |
-                <a href="https://github.com/Fsoft-AIC/Open-Vocabulary-Affordance-Detection-using-Knowledge-Distillation-and-Text-Point-Correlation">Code</a>
-                </b>
-                <br>
-                <p> We introduce a new open-vocabulary affordance detection method using knowledge distillation and text-point correlation. </p>
-            </td>
-        </tr>
-
-        <tr>
-            <td style="padding:20px;width:30%;max-width:30%" align="center">
-                <video style="width:100%;max-width:100%" autoplay loop playsinline muted>
-                    <source src="visual/langscene.mp4" type="video/mp4">
-                </video>
-            </td>
-            <td width="75%" valign="center">
-                <papertitle>Language-Driven Scene Synthesis Using Multi-Conditional Diffusion Model</papertitle>
-                <br>
-                <a href="https://scholar.google.com/citations?user=CUpnG-YAAAAJ">An Vuong</a>,
-                <a href="https://scholar.google.com/citations?user=qyExc4QAAAAJ">Minh Nhat Vu</a>,
-                <strong>Tien Toan Nguyen</strong>,
-                <a href="https://scholar.google.com/citations?user=unbPvWAAAAAJ">Baoru Huang</a>,
-                <a href="https://scholar.google.com/citations?user=M7T55ooAAAAJ">Dung Nguyen</a>,
-                <a href="https://scholar.google.at/citations?user=CM2qJSoAAAAJn">Thieu Vo</a>,
-                <a href="https://scholar.google.co.uk/citations?user=gEbaF0sAAAAJ">Anh Nguyen</a>
-                <br>
-                <em>Conference on Neural Information Processing Systems (<strong>NeurIPS</strong>), 2023</em>
-                <br>
-                <b>
-                <a href="https://arxiv.org/abs/2310.15948">arXiv</a> |
-                <a href="https://lang-scene-synth.github.io/">Project</a> |
-                <a href="https://github.com/andvg3/LSDM">Code</a>
-                </b>
-                <br>
-                <p> We introduce Language-Driven Scene Synthesis task, which involves the leverage of human-input text prompts to generate physically plausible and semantically reasonable objects. </p>
+            <td style="padding:0px 20px 20px 20px;">
+                <div class="publication-card published">
+                    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;"><tbody>
+                    <tr>
+                        <td style="padding:8px;width:30%;max-width:30%" align="center">
+                            <div class="paper-image-container">
+                                <img style="width:100%;max-width:100%" src="visual/habicrowd.gif" alt="dise">
+                            </div>
+                        </td>
+                        <td style="padding:8px;width:70%;" valign="top">
+                            <papertitle>HabiCrowd: A High Performance Simulator for Crowd-Aware Visual Navigation</papertitle>
+                            <br>
+                            <a href="https://scholar.google.com/citations?user=CUpnG-YAAAAJ">An Vuong</a>,
+                            <strong>Toan Nguyen</strong>,
+                            <a href="https://scholar.google.com/citations?user=qyExc4QAAAAJ">Minh Nhat Vu</a>,
+                            <a href="https://scholar.google.com/citations?user=unbPvWAAAAAJ">Baoru Huang</a>,
+                            <a href="https://scholar.google.com/citations?user=M7T55ooAAAAJ">Dung Nguyen</a>,
+                            <a href="https://scholar.google.com/citations?user=vJYe5lkAAAAJ">Binh Huynh</a>,
+                            <a href="https://scholar.google.at/citations?user=CM2qJSoAAAAJ">Thieu Vo</a>,
+                            <a href="https://scholar.google.co.uk/citations?user=gEbaF0sAAAAJ">Anh Nguyen</a>
+                            <br>
+                            <span class="venue-badge tier1">IROS 2024</span>
+                            <br>
+                            <div class="paper-links">
+                                <a href="https://arxiv.org/abs/2306.11377">📄 arXiv</a>
+                                <a href="https://habicrowd.github.io/">🌐 Project</a>
+                                <a href="https://github.com/Fsoft-AIC/HabiCrowd">💻 Code</a>
+                            </div>
+                            <!-- <p style="margin-top:8px;margin-bottom:0;"> We introduce HabiCrowd, a new dataset and benchmark for crowd-aware visual navigation that surpasses other benchmarks in terms of human diversity and computational utilization. </p> -->
+                        </td>
+                    </tr>
+                    </tbody></table>
+                </div>
             </td>
         </tr>
 
         <tr>
-            <td style="padding:20px;width:30%;max-width:30%" align="center">
-                <img style="width:100%;max-width:100%" src="visual/openad.png" alt="dise">
+            <td style="padding:0px 20px 20px 20px;">
+                <div class="publication-card published">
+                    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;"><tbody>
+                    <tr>
+                        <td style="padding:8px;width:30%;max-width:30%" align="center">
+                            <div class="paper-image-container">
+                                <img style="width:100%;max-width:100%" src="visual/3dapnet.png" alt="dise">
+                            </div>
+                        </td>
+                        <td style="padding:8px;width:70%;" valign="top">
+                            <papertitle>Language-Conditioned Affordance-Pose Detection in 3D Point Clouds</papertitle>
+                            <br>
+                            <strong>Toan Nguyen</strong>,
+                            <a href="https://scholar.google.com/citations?user=qyExc4QAAAAJ">Minh Nhat Vu</a>,
+                            <a href="https://scholar.google.com/citations?user=unbPvWAAAAAJ">Baoru Huang</a>,
+                            <a href="https://scholar.google.com/citations?user=TsjvwzgAAAAJ">Tuan Vo</a>,
+                            <a>Vy Truong</a>,
+                            <a href="https://scholar.google.com/citations?user=8ck0k_UAAAAJ">Ngan Le</a>,
+                            <a href="https://scholar.google.at/citations?user=CM2qJSoAAAAJn">Thieu Vo</a>,
+                            <a href="https://scholar.google.com/citations?user=UA_83MUAAAAJ">Bac Le</a>,
+                            <a href="https://scholar.google.co.uk/citations?user=gEbaF0sAAAAJ">Anh Nguyen</a>
+                            <br>
+                            <span class="venue-badge tier1">ICRA 2024</span>
+                            <br>
+                            <div class="paper-links">
+                                <a href="https://arxiv.org/abs/2309.10911">📄 arXiv</a>
+                                <a href="https://3dapnet.github.io/">🌐 Project</a>
+                                <a href="https://github.com/Fsoft-AIC/Language-Conditioned-Affordance-Pose-Detection-in-3D-Point-Clouds">💻 Code</a>
+                            </div>
+                            <!-- <p style="margin-top:8px;margin-bottom:0;"> We address the task of language-driven affordance-pose detection in 3D point clouds. Our method simultaneously detect open-vocabulary affordances and generate affordance-specific 6-DoF poses. </p> -->
+                        </td>
+                    </tr>
+                    </tbody></table>
+                </div>
             </td>
-            <td width="75%" valign="center">
-                <papertitle>Open-Vocabulary Affordance Detection in 3D Point Clouds</papertitle>
-                <br>
-                <strong>Tien Toan Nguyen</strong>,
-                <a href="https://scholar.google.com/citations?user=qyExc4QAAAAJ">Minh Nhat Vu</a>,
-                <a href="https://scholar.google.com/citations?user=CUpnG-YAAAAJ">An Vuong</a>,
-                <a href="https://scholar.google.com/citations?user=M7T55ooAAAAJ">Dung Nguyen</a>,
-                <a href="https://scholar.google.at/citations?user=CM2qJSoAAAAJn">Thieu Vo</a>,
-                <a href="https://scholar.google.com/citations?user=8ck0k_UAAAAJ">Ngan Le</a>,
-                <a href="https://scholar.google.co.uk/citations?user=gEbaF0sAAAAJ">Anh Nguyen</a>
-                <br>
-                <em>IEEE/RSJ International Conference on Intelligent Robots and Systems (<strong>IROS</strong>), 2023</em> <span class="tag">Best Paper Finalist</span>
-                <br>
-                <b>
-                <a href="https://arxiv.org/abs/2303.02401">arXiv</a> |
-                <a href="https://openad2023.github.io/">Project</a> |
-                <a href="https://github.com/Fsoft-AIC/OpenAD">Code</a>
-                </b>
-                <br>
-                <p> Our method detects open-vocabulary textual affordance labels in 3D point cloud objects. </p>
+        </tr>
+
+        <tr>
+            <td style="padding:0px 20px 20px 20px;">
+                <div class="publication-card published">
+                    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;"><tbody>
+                    <tr>
+                        <td style="padding:8px;width:30%;max-width:30%" align="center">
+                            <div class="paper-image-container">
+                                <img style="width:100%;max-width:100%" src="visual/openkd.png" alt="dise">
+                            </div>
+                        </td>
+                        <td style="padding:8px;width:70%;" valign="top">
+                            <papertitle>Open-Vocabulary Affordance Detection using Knowledge Distillation and Text-Point Correlation</papertitle>
+                            <br>
+                            <a href="https://scholar.google.com/citations?user=TsjvwzgAAAAJ">Tuan Vo</a>,
+                            <a href="https://scholar.google.com/citations?user=qyExc4QAAAAJ">Minh Nhat Vu</a>,
+                            <a href="https://scholar.google.com/citations?user=unbPvWAAAAAJ">Baoru Huang</a>,
+                            <strong>Toan Nguyen</strong>,
+                            <a href="https://scholar.google.com/citations?user=8ck0k_UAAAAJ">Ngan Le</a>,
+                            <a href="https://scholar.google.at/citations?user=CM2qJSoAAAAJn">Thieu Vo</a>,
+                            <a href="https://scholar.google.co.uk/citations?user=gEbaF0sAAAAJ">Anh Nguyen</a>
+                            <br>
+                            <span class="venue-badge tier1">ICRA 2024</span>
+                            <br>
+                            <div class="paper-links">
+                                <a href="https://arxiv.org/abs/2309.10932">📄 arXiv</a>
+                                <a href="https://github.com/Fsoft-AIC/Open-Vocabulary-Affordance-Detection-using-Knowledge-Distillation-and-Text-Point-Correlation">💻 Code</a>
+                            </div>
+                            <!-- <p style="margin-top:8px;margin-bottom:0;"> We introduce a new open-vocabulary affordance detection method using knowledge distillation and text-point correlation. </p> -->
+                        </td>
+                    </tr>
+                    </tbody></table>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding:0px 20px 20px 20px;">
+                <div class="publication-card published">
+                    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;"><tbody>
+                    <tr>
+                        <td style="padding:8px;width:30%;max-width:30%" align="center">
+                            <div class="paper-image-container">
+                                <video style="width:100%;max-width:100%" autoplay loop playsinline muted>
+                                    <source src="visual/langscene.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </td>
+                        <td style="padding:8px;width:70%;" valign="top">
+                            <papertitle>Language-Driven Scene Synthesis Using Multi-Conditional Diffusion Model</papertitle>
+                            <br>
+                            <a href="https://scholar.google.com/citations?user=CUpnG-YAAAAJ">An Vuong</a>,
+                            <a href="https://scholar.google.com/citations?user=qyExc4QAAAAJ">Minh Nhat Vu</a>,
+                            <strong>Toan Nguyen</strong>,
+                            <a href="https://scholar.google.com/citations?user=unbPvWAAAAAJ">Baoru Huang</a>,
+                            <a href="https://scholar.google.com/citations?user=M7T55ooAAAAJ">Dung Nguyen</a>,
+                            <a href="https://scholar.google.at/citations?user=CM2qJSoAAAAJn">Thieu Vo</a>,
+                            <a href="https://scholar.google.co.uk/citations?user=gEbaF0sAAAAJ">Anh Nguyen</a>
+                            <br>
+                            <span class="venue-badge tier1">NeurIPS 2023</span>
+                            <br>
+                            <div class="paper-links">
+                                <a href="https://arxiv.org/abs/2310.15948">📄 arXiv</a>
+                                <a href="https://lang-scene-synth.github.io/">🌐 Project</a>
+                                <a href="https://github.com/andvg3/LSDM">💻 Code</a>
+                            </div>
+                            <!-- <p style="margin-top:8px;margin-bottom:0;"> We introduce Language-Driven Scene Synthesis task, which involves the leverage of human-input text prompts to generate physically plausible and semantically reasonable objects. </p> -->
+                        </td>
+                    </tr>
+                    </tbody></table>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding:0px 20px 20px 20px;">
+                <div class="publication-card published">
+                    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;"><tbody>
+                    <tr>
+                        <td style="padding:8px;width:30%;max-width:30%" align="center">
+                            <div class="paper-image-container">
+                                <img style="width:100%;max-width:100%" src="visual/openad.png" alt="dise">
+                            </div>
+                        </td>
+                        <td style="padding:8px;width:70%;" valign="top">
+                            <papertitle>Open-Vocabulary Affordance Detection in 3D Point Clouds</papertitle>
+                            <span class="award-badge best-paper">🏅 BEST PAPER FINALIST</span>
+                            <span class="award-badge best-paper">🎓 BEST STUDENT PAPER FINALIST</span>
+                            <br>
+                            <strong>Toan Nguyen</strong>,
+                            <a href="https://scholar.google.com/citations?user=qyExc4QAAAAJ">Minh Nhat Vu</a>,
+                            <a href="https://scholar.google.com/citations?user=CUpnG-YAAAAJ">An Vuong</a>,
+                            <a href="https://scholar.google.com/citations?user=M7T55ooAAAAJ">Dung Nguyen</a>,
+                            <a href="https://scholar.google.at/citations?user=CM2qJSoAAAAJn">Thieu Vo</a>,
+                            <a href="https://scholar.google.com/citations?user=8ck0k_UAAAAJ">Ngan Le</a>,
+                            <a href="https://scholar.google.co.uk/citations?user=gEbaF0sAAAAJ">Anh Nguyen</a>
+                            <br>
+                            <span class="venue-badge tier1">IROS 2023</span>
+                            <br>
+                            <div class="paper-links">
+                                <a href="https://arxiv.org/abs/2303.02401">📄 arXiv</a>
+                                <a href="https://openad2023.github.io/">🌐 Project</a>
+                                <a href="https://github.com/Fsoft-AIC/OpenAD">💻 Code</a>
+                            </div>
+                            <!-- <p style="margin-top:8px;margin-bottom:0;"> Our method detects open-vocabulary textual affordance labels in 3D point cloud objects. </p> -->
+                        </td>
+                    </tr>
+                    </tbody></table>
+                </div>
             </td>
         </tr>
 
@@ -310,135 +414,116 @@
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
                 <td style="padding:20px;width:100%;vertical-align:middle">
-                    <heading><b><font color="990000">Under Review</font></b></heading>
+                    <div class="section-header">
+                        <heading><b><font color="1e3a8a">Under Review</font></b></heading>
+                    </div>
                 </td>
             </tr>
             </tbody></table>
     
             <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         <tr>
-            <td style="padding:20px;width:30%;max-width:30%" align="center">
-                <img style="width:100%;max-width:100%" src="visual/slotvla.png" alt="dise">
-            </td>
-            <td width="75%" valign="center">
-                <papertitle>SlotVLA: Towards Modeling of Object-Relation Representations in Robotic Manipulation</papertitle>
-                <br>
-                <a href="https://scholar.google.com/citations?user=mJuHh7UAAAAJ">Taisei Hanyu</a>,
-                <a href="https://scholar.google.com/citations?user=LZb_-BwAAAAJ">Nhat Chung</a>,
-                <a href="https://scholar.google.com/citations?user=nsoYvw8AAAAJ">Huy Le</a>,
-                <strong>Tien Toan Nguyen</strong>,
-                <a href="https://scholar.google.com/citations?user=4obQ9wsAAAAJ">Yuki Ikebe</a>,
-                <a href="https://scholar.google.com/citations?user=XxR281AAAAAJ">Anthony Gunderman</a>,
-                <a href="https://scholar.google.com/citations?user=_NIyeykAAAAJ">Duy Nguyen Ho Minh</a>,
-                <a href="https://scholar.google.com/citations?user=Iyvx8vcAAAAJ">Khoa Vo</a>,
-                <a href="https://scholar.google.com/citations?user=9luXdEIAAAAJ">Tung Kieu</a>,
-                <a href="https://scholar.google.com/citations?user=TF2LRvMAAAAJ">Kashu Yamazaki</a>,
-                <a href="https://scholar.google.com/citations?user=jGiFLP8AAAAJ">Chase Rainwater</a>,
-                <a href="https://scholar.google.co.uk/citations?user=gEbaF0sAAAAJ">Anh Nguyen</a>,
-                <a href="https://scholar.google.com/citations?user=8ck0k_UAAAAJ">Ngan Le</a>
-                <br>
-                <em>Under Review</em>
-                <br><br>
+            <td style="padding:0px 20px 20px 20px;">
+                <div class="publication-card under-review">
+                    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;"><tbody>
+                    <tr>
+                        <td style="padding:8px;width:30%;max-width:30%" align="center">
+                            <div class="paper-image-container">
+                                <img style="width:100%;max-width:100%" src="visual/slotvla.png" alt="dise">
+                            </div>
+                        </td>
+                        <td style="padding:8px;width:70%;" valign="top">
+                            <papertitle>SlotVLA: Towards Modeling of Object-Relation Representations in Robotic Manipulation</papertitle>
+                            <br>
+                            <a href="https://scholar.google.com/citations?user=mJuHh7UAAAAJ">Taisei Hanyu</a>,
+                            <a href="https://scholar.google.com/citations?user=LZb_-BwAAAAJ">Nhat Chung</a>,
+                            <a href="https://scholar.google.com/citations?user=nsoYvw8AAAAJ">Huy Le</a>,
+                            <strong>Toan Nguyen</strong>,
+                            <a href="https://scholar.google.com/citations?user=4obQ9wsAAAAJ">Yuki Ikebe</a>,
+                            <a href="https://scholar.google.com/citations?user=XxR281AAAAAJ">Anthony Gunderman</a>,
+                            <a href="https://scholar.google.com/citations?user=_NIyeykAAAAJ">Duy Nguyen Ho Minh</a>,
+                            <a href="https://scholar.google.com/citations?user=Iyvx8vcAAAAJ">Khoa Vo</a>,
+                            <a href="https://scholar.google.com/citations?user=9luXdEIAAAAJ">Tung Kieu</a>,
+                            <a href="https://scholar.google.com/citations?user=TF2LRvMAAAAJ">Kashu Yamazaki</a>,
+                            <a href="https://scholar.google.com/citations?user=jGiFLP8AAAAJ">Chase Rainwater</a>,
+                            <a href="https://scholar.google.co.uk/citations?user=gEbaF0sAAAAJ">Anh Nguyen</a>,
+                            <a href="https://scholar.google.com/citations?user=8ck0k_UAAAAJ">Ngan Le</a>
+                            <br>
+                            <span class="venue-badge" style="background:#666;">Under Review</span>
+                        </td>
+                    </tr>
+                    </tbody></table>
+                </div>
             </td>
         </tr>
-        
+
+
         <tr>
-            <td style="padding:20px;width:30%;max-width:30%" align="center">
-                <img style="width:100%;max-width:100%" src="visual/robomemo.png" alt="dise">
-            </td>
-            <td width="75%" valign="center">
-                <papertitle>Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric Perspective</papertitle>
-                <br>
-                <a href="https://scholar.google.com/citations?user=LZb_-BwAAAAJ">Nhat Chung</a>,
-                <a href="https://scholar.google.com/citations?user=mJuHh7UAAAAJ">Taisei Hanyu</a>,
-                <strong>Tien Toan Nguyen</strong>,
-                <a href="https://scholar.google.com/citations?user=nsoYvw8AAAAJ">Huy Le</a>,
-                <a href="https://uark-aicv.github.io/team/frederick_bumgarner.html">Frederick Bumgarner</a>,
-                <a href="https://scholar.google.com/citations?user=_NIyeykAAAAJ">Duy Nguyen Ho Minh</a>,
-                <a href="https://scholar.google.com/citations?user=Iyvx8vcAAAAJ">Khoa Vo</a>,
-                <a href="https://scholar.google.com/citations?user=TF2LRvMAAAAJ">Kashu Yamazaki</a>,
-                <a href="https://scholar.google.com/citations?user=jGiFLP8AAAAJ">Chase Rainwater</a>,
-                <a href="https://scholar.google.com/citations?user=9luXdEIAAAAJ">Tung Kieu</a>,
-                <a href="https://scholar.google.co.uk/citations?user=gEbaF0sAAAAJ">Anh Nguyen</a>,
-                <a href="https://scholar.google.com/citations?user=8ck0k_UAAAAJ">Ngan Le</a>
-                <br>
-                <em>Under Review</em>
-                <br><br>
+            <td style="padding:0px 20px 20px 20px;">
+                <div class="publication-card under-review">
+                    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;"><tbody>
+                    <tr>
+                        <td style="padding:8px;width:30%;max-width:30%" align="center">
+                            <div class="paper-image-container">
+                                <img style="width:100%;max-width:100%" src="visual/robodesign.png" alt="dise">
+                            </div>
+                        </td>
+                        <td style="padding:8px;width:70%;" valign="top">
+                            <papertitle>RoboDesign1M: A Large-scale Dataset for Robot Design Understanding</papertitle>
+                            <br>
+                            <a href="https://scholar.google.com/citations?user=t6RXOWgAAAAJ">Tri Le</a>,
+                            <strong>Toan Nguyen</strong>,
+                            <a href="https://scholar.google.com.vn/citations?user=DbAThEgAAAAJ">Quang Tran</a>,
+                            <a href="https://scholar.google.com/citations?user=F5Fr2ysAAAAJ">Quang Nguyen</a>,
+                            <a href="https://scholar.google.com/citations?user=unbPvWAAAAAJ">Baoru Huang</a>,
+                            <a>Hoan Nguyen</a>,
+                            <a href="https://scholar.google.com/citations?user=qyExc4QAAAAJ">Minh Nhat Vu</a>,
+                            <a href="https://scholar.google.co.jp/citations?user=KUqlbGUAAAAJ">Tung Duc Ta</a>,
+                            <a href="https://scholar.google.co.uk/citations?user=gEbaF0sAAAAJ">Anh Nguyen</a>
+                            <br>
+                            <span class="venue-badge" style="background:#666;">Under Review</span>
+                            <br>
+                            <div class="paper-links">
+                                <a href="https://arxiv.org/pdf/2503.06796">📄 arXiv</a>
+                            </div>
+                            <!-- <p style="margin-top:8px;margin-bottom:0;"> We introduce RoboDesign1M, a large-scale dataset dedicated to robot design with over 1M samples and multimodal ground truth. </p> -->
+                        </td>
+                    </tr>
+                    </tbody></table>
+                </div>
             </td>
         </tr>
 
         <tr>
-            <td style="padding:20px;width:30%;max-width:30%" align="center">
-                <img style="width:100%;max-width:100%" src="visual/robodesign.png" alt="dise">
-            </td>
-            <td width="75%" valign="center">
-                <papertitle>RoboDesign1M: A Large-scale Dataset for Robot Design Understanding</papertitle>
-                <br>
-                <a href="https://scholar.google.com/citations?user=t6RXOWgAAAAJ">Tri Le</a>,
-                <strong>Tien Toan Nguyen</strong>,
-                <a href="https://scholar.google.com.vn/citations?user=DbAThEgAAAAJ">Quang Tran</a>,
-                <a href="https://scholar.google.com/citations?user=F5Fr2ysAAAAJ">Quang Nguyen</a>,
-                <a href="https://scholar.google.com/citations?user=unbPvWAAAAAJ">Baoru Huang</a>,
-                <a>Hoan Nguyen</a>,
-                <a href="https://scholar.google.com/citations?user=qyExc4QAAAAJ">Minh Nhat Vu</a>,
-                <a href="https://scholar.google.co.jp/citations?user=KUqlbGUAAAAJ">Tung Duc Ta</a>,
-                <a href="https://scholar.google.co.uk/citations?user=gEbaF0sAAAAJ">Anh Nguyen</a>
-                <br>
-                <em>Under Review</em>
-                <br>
-                <b>
-                <a href="https://arxiv.org/pdf/2503.06796">arXiv</a>
-                </b>
-                <br>
-                <p> We introduce RoboDesign1M, a large-scale dataset dedicated to robot design with over 1M samples and multimodal ground truth. </p>
-            </td>
-        </tr>
-
-        <tr>
-            <td style="padding:20px;width:30%;max-width:30%" align="center">
-                <img style="width:100%;max-width:100%" src="visual/furnimas.png" alt="dise">
-            </td>
-            <td width="75%" valign="center">
-                <papertitle>FurniMAS: Language-Guided Furniture Decoration using Multi-Agent System</papertitle>
-                <br>
-                <strong>Tien Toan Nguyen</strong>,
-                <a href="https://scholar.google.com/citations?user=t6RXOWgAAAAJ">Tri Le</a>,
-                <a href="https://scholar.google.com/citations?user=F5Fr2ysAAAAJ">Quang Nguyen</a>,
-                <a href="https://scholar.google.co.uk/citations?user=gEbaF0sAAAAJ">Anh Nguyen</a>
-                <br>
-                <em>Under Review</em>
-                <br>
-                <b>
-                <a href="https://arxiv.org/pdf/2507.04770?">arXiv</a>
-                </b>
-                <br>
-                <p> We propose FurniMAS, an LLM-based multi-agent system for automatic furniture decoration following human-input text prompts. </p>
+            <td style="padding:0px 20px 20px 20px;">
+                <div class="publication-card under-review">
+                    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;"><tbody>
+                    <tr>
+                        <td style="padding:8px;width:30%;max-width:30%" align="center">
+                            <div class="paper-image-container">
+                                <img style="width:100%;max-width:100%" src="visual/furnimas.png" alt="dise">
+                            </div>
+                        </td>
+                        <td style="padding:8px;width:70%;" valign="top">
+                            <papertitle>FurniMAS: Language-Guided Furniture Decoration using Multi-Agent System</papertitle>
+                            <br>
+                            <strong>Toan Nguyen</strong>,
+                            <a href="https://scholar.google.com/citations?user=t6RXOWgAAAAJ">Tri Le</a>,
+                            <a href="https://scholar.google.com/citations?user=F5Fr2ysAAAAJ">Quang Nguyen</a>,
+                            <a href="https://scholar.google.co.uk/citations?user=gEbaF0sAAAAJ">Anh Nguyen</a>
+                            <br>
+                            <span class="venue-badge" style="background:#666;">Under Review</span>
+                            <br>
+                            <div class="paper-links">
+                                <a href="https://arxiv.org/pdf/2507.04770?">📄 arXiv</a>
+                            </div>
+                            <!-- <p style="margin-top:8px;margin-bottom:0;"> We propose FurniMAS, an LLM-based multi-agent system for automatic furniture decoration following human-input text prompts. </p> -->
+                        </td>
+                    </tr>
+                    </tbody></table>
+                </div>
             </td>
         </tr>
-
-        <!-- <tr>
-            <td style="padding:20px;width:30%;max-width:30%" align="center">
-                <img style="width:100%;max-width:100%" src="visual/dewi.png" alt="dise">
-            </td>
-            <td width="75%" valign="center">
-                <papertitle>Boosting Insect Pest Recognition with Deep-Wide Learning</papertitle>
-                <br>
-                <strong>Tien Toan Nguyen</strong>,
-                <a>Huy Nguyen</a>,
-                <a href="https://scholar.google.com.vn/citations?user=_udCkLEAAAAJ">Huy Ung</a>,
-                <a>Hieu Ung</a>,
-                <a href="https://scholar.google.com.vn/citations?user=dXEb3PMAAAAJ">Binh Nguyen</a>
-                <br>
-                <em>Under Review</em>
-                <br>
-                <b>
-                <a href="https://arxiv.org/abs/2409.10445">arXiv</a> |
-                <a href="https://github.com/toannguyen1904/DeWi">Code</a>
-                </b>
-                <br>
-                <p> DeWi obtains state-of-the-art performances on insect pest classification benchmarks by combining image data augmentation and representation learning. </p>
-            </td>
-        </tr> -->
 
         </tbody></table>
 
@@ -446,13 +531,17 @@
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         <tr>
             <td style="padding:20px;width:100%;vertical-align:middle">
-                <heading><b><font color="990000">Profesional Services</font></b></heading>
-                <p>
-                <li style="margin: 5px;"> <b>Conference reviewer:</b> WACV 2026, IROS 2025, ECCV 2024, ICRA 2024, IROS 2024.</li>
-                </p>
-                <p>
-                <li style="margin: 5px;"> <b>Journal reviewer:</b> RA-L 2025.</li>
-                </p>
+                <div class="section-header">
+                    <heading><b><font color="1e3a8a">Professional Services</font></b></heading>
+                </div>
+                <div style="background:white;border-radius:12px;padding:25px;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+                    <p style="margin:0 0 15px 0;">
+                    <li style="margin: 8px 0;"> <b>Conference Reviewer:</b> ICRA 2026, WACV 2026, IROS 2025, ECCV 2024, ICRA 2024, IROS 2024.</li>
+                    </p>
+                    <p style="margin:0;">
+                    <li style="margin: 8px 0;"> <b>Journal Reviewer:</b> RA-L 2025.</li>
+                    </p>
+                </div>
             </td>
         </tr>
         </tbody></table>
@@ -461,15 +550,35 @@
         <tr>
             <td style="padding:0px">
                 <br>
-                <p style="text-align:right;font-size:small;">
-                    <a href="https://jonbarron.info/">Website Template</a>
-                </p>
             </td>
         </tr>
         </tbody></table>
 
     </tr>
 </tbody></table>
+
+<script>
+// Dark mode toggle functionality
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    
+    // Save preference to localStorage
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+    } else {
+        localStorage.setItem('darkMode', 'disabled');
+    }
+}
+
+// Load dark mode preference on page load
+window.addEventListener('DOMContentLoaded', (event) => {
+    const darkMode = localStorage.getItem('darkMode');
+    
+    if (darkMode === 'enabled') {
+        document.body.classList.add('dark-mode');
+    }
+});
+</script>
 
 </body>
 </html>
