@@ -13,6 +13,11 @@
 </head>
 
 <body>
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" id="darkModeBtn" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+        <span class="sun-icon">☀️</span>
+        <span class="moon-icon">🌙</span>
+    </button>
 
     <main class="container">
         <!-- Hero Section -->
@@ -105,7 +110,7 @@
                             <span class="venue-badge tier1">AAAI 2026</span>
                         </div>
                         <div class="paper-links">
-                            <a href="https://www.arxiv.org/abs/2511.11478"><img src="visual/arxiv-logo.png" alt="arXiv"></a>
+                            <a href="https://www.arxiv.org/abs/2511.11478">📄 Paper</a>
                             <a href="https://libero-mem.github.io/">↗ Project</a>
                         </div>
                     </div>
@@ -136,7 +141,7 @@
                             <span class="award-badge oral">🏆 ORAL PRESENTATION</span>
                         </div>
                         <div class="paper-links">
-                            <a href="https://arxiv.org/abs/2407.13842"><img src="visual/arxiv-logo.png" alt="arXiv"></a>
+                            <a href="https://arxiv.org/abs/2407.13842">📄 Paper</a>
                             <a href="https://airvlab.github.io/grasp-anything/">↗ Project</a>
                             <a href="https://github.com/Fsoft-AIC/Language-Driven-6-DoF-Grasp-Detection-Using-Negative-Prompt-Guidance">⌘ Code</a>
                         </div>
@@ -164,7 +169,7 @@
                             <span class="venue-badge tier1">IROS 2024</span>
                         </div>
                         <div class="paper-links">
-                            <a href="https://arxiv.org/abs/2306.11377"><img src="visual/arxiv-logo.png" alt="arXiv"></a>
+                            <a href="https://arxiv.org/abs/2306.11377">📄 Paper</a>
                             <a href="https://habicrowd.github.io/">↗ Project</a>
                             <a href="https://github.com/Fsoft-AIC/HabiCrowd">⌘ Code</a>
                         </div>
@@ -193,7 +198,7 @@
                             <span class="venue-badge tier1">ICRA 2024</span>
                         </div>
                         <div class="paper-links">
-                            <a href="https://arxiv.org/abs/2309.10911"><img src="visual/arxiv-logo.png" alt="arXiv"></a>
+                            <a href="https://arxiv.org/abs/2309.10911">📄 Paper</a>
                             <a href="https://3dapnet.github.io/">↗ Project</a>
                             <a href="https://github.com/Fsoft-AIC/Language-Conditioned-Affordance-Pose-Detection-in-3D-Point-Clouds">⌘ Code</a>
                         </div>
@@ -220,7 +225,7 @@
                             <span class="venue-badge tier1">ICRA 2024</span>
                         </div>
                         <div class="paper-links">
-                            <a href="https://arxiv.org/abs/2309.10932"><img src="visual/arxiv-logo.png" alt="arXiv"></a>
+                            <a href="https://arxiv.org/abs/2309.10932">📄 Paper</a>
                             <a href="https://github.com/Fsoft-AIC/Open-Vocabulary-Affordance-Detection-using-Knowledge-Distillation-and-Text-Point-Correlation">⌘ Code</a>
                         </div>
                     </div>
@@ -248,7 +253,7 @@
                             <span class="venue-badge tier1">NeurIPS 2023</span>
                         </div>
                         <div class="paper-links">
-                            <a href="https://arxiv.org/abs/2310.15948"><img src="visual/arxiv-logo.png" alt="arXiv"></a>
+                            <a href="https://arxiv.org/abs/2310.15948">📄 Paper</a>
                             <a href="https://lang-scene-synth.github.io/">↗ Project</a>
                             <a href="https://github.com/andvg3/LSDM">⌘ Code</a>
                         </div>
@@ -277,7 +282,7 @@
                             <span class="award-badge best-paper">🎓 BEST STUDENT PAPER FINALIST</span>
                         </div>
                         <div class="paper-links">
-                            <a href="https://arxiv.org/abs/2303.02401"><img src="visual/arxiv-logo.png" alt="arXiv"></a>
+                            <a href="https://arxiv.org/abs/2303.02401">📄 Paper</a>
                             <a href="https://openad2023.github.io/">↗ Project</a>
                             <a href="https://github.com/Fsoft-AIC/OpenAD">⌘ Code</a>
                         </div>
@@ -316,7 +321,7 @@
                             <a href="https://scholar.google.com/citations?user=8ck0k_UAAAAJ">Ngan Le</a>
                         </p>
                         <div class="paper-links">
-                            <a href="https://arxiv.org/abs/2511.06754v1"><img src="visual/arxiv-logo.png" alt="arXiv"></a>
+                            <a href="https://arxiv.org/abs/2511.06754v1">📄 Paper</a>
                         </div>
                     </div>
                 </article>
@@ -340,7 +345,7 @@
                             <a href="https://scholar.google.co.uk/citations?user=gEbaF0sAAAAJ">Anh Nguyen</a>
                         </p>
                         <div class="paper-links">
-                            <a href="https://arxiv.org/pdf/2503.06796"><img src="visual/arxiv-logo.png" alt="arXiv"></a>
+                            <a href="https://arxiv.org/pdf/2503.06796">📄 Paper</a>
                         </div>
                     </div>
                 </article>
@@ -359,7 +364,7 @@
                             <a href="https://scholar.google.co.uk/citations?user=gEbaF0sAAAAJ">Anh Nguyen</a>
                         </p>
                         <div class="paper-links">
-                            <a href="https://arxiv.org/pdf/2507.04770?"><img src="visual/arxiv-logo.png" alt="arXiv"></a>
+                            <a href="https://arxiv.org/pdf/2507.04770?">📄 Paper</a>
                         </div>
                     </div>
                 </article>
@@ -387,25 +392,34 @@
     </main>
 
     <script>
-        // Automatic dark mode based on time of day
-        function updateDarkMode() {
-            const hour = new Date().getHours();
-            // Dark mode between 7 PM (19:00) and 7 AM (07:00)
-            const isDarkTime = hour >= 19 || hour < 7;
+        // Dark mode toggle functionality
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
             
-            if (isDarkTime) {
-                document.body.classList.add('dark-mode');
+            // Save preference to localStorage
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
             } else {
-                document.body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
             }
         }
 
-        // Apply dark mode on page load
+        // Apply dark mode on page load (check localStorage first, then time-based)
         window.addEventListener('DOMContentLoaded', (event) => {
-            updateDarkMode();
+            const savedMode = localStorage.getItem('darkMode');
             
-            // Check every minute in case the user keeps the page open
-            setInterval(updateDarkMode, 60000);
+            if (savedMode === 'enabled') {
+                document.body.classList.add('dark-mode');
+            } else if (savedMode === 'disabled') {
+                document.body.classList.remove('dark-mode');
+            } else {
+                // No saved preference - use time-based default
+                const hour = new Date().getHours();
+                const isDarkTime = hour >= 19 || hour < 7;
+                if (isDarkTime) {
+                    document.body.classList.add('dark-mode');
+                }
+            }
         });
 
         // Intersection Observer for scroll animations
