@@ -431,6 +431,58 @@ body.dark-mode .dark-mode-toggle .moon-icon {
   border-radius: 8px;
 }
 
+/* Video Thumbnail with Play Button */
+.video-thumbnail {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.video-thumbnail .play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  transition: all var(--transition-base);
+}
+
+.video-thumbnail:hover .play-button {
+  background: var(--accent);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Project Description */
+.paper-description {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-sm);
+}
+
+/* Project Course Label */
+.project-course {
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--space-xs);
+}
+
+/* Project Card Style */
+.publication-card.project {
+  border-left: 4px solid var(--accent);
+}
+
 .paper-content {
   flex: 1;
   min-width: 0;
