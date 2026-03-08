@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICLR: In-Context Imitation Learning with Visual Reasoning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.24/dist/css/bulma-carousel.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <link rel="icon" type="image/png" href="assets/roboreason.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.24/dist/js/bulma-carousel.min.js"></script>
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$', '$']] }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+
+  <section class="hero publication-header">
+    <div class="hero-body">
+      <div class="container is-max-widescreen">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="paper-title">
+              <span class="abbr">ICLR</span>: In-Context Imitation Learning with<br />
+              Visual Reasoning
+            </h1>
+            <p class="paper-authors">
+              <a href="https://scholar.google.com/citations?user=PhqGEY8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Toan Nguyen</a><sup>1*</sup>,
+              <a href="https://scholar.google.com/citations?user=r0fhk1IAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Weiduo Yuan</a><sup>1</sup>,
+              <a href="https://scholar.google.com/citations?user=jmtAxTgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Songlin Wei</a><sup>1</sup>,
+              <a href="https://scholar.google.com/citations?user=e_Npqt4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Hui Li</a><sup>2</sup>,
+              <a href="https://scholar.google.com/citations?user=ECHSnpYAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Daniel Seita</a><sup>1†</sup>,
+              <a href="https://scholar.google.com/citations?user=v-AEFIEAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Yue Wang</a><sup>1†</sup>
+            </p>
+            <p class="paper-affiliations">
+              <sup>1</sup> University of Southern California &nbsp;&nbsp; <sup>2</sup> Autodesk Research
+            </p>
+            <p class="paper-notes">
+              <sup>†</sup> Co-advising &nbsp;&nbsp; <sup>*</sup> Corresponding author
+            </p>
+            <div class="paper-resources">
+              <a class="resource-link" href="assets/ICLR.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i><span>Paper</span></a>
+              <span class="resource-link is-disabled" aria-disabled="true"><i class="ai ai-arxiv" aria-hidden="true"></i><span>arXiv (coming soon)</span></span>
+              <span class="resource-link is-disabled" aria-disabled="true"><i class="fa-brands fa-github" aria-hidden="true"></i><span>Code (coming soon)</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section intro-section">
+    <div class="container is-max-desktop">
+      <figure class="intro-figure">
+        <video autoplay loop muted playsinline controls>
+          <source src="assets/Teaser.mp4" type="video/mp4" />
+        </video>
+        <figcaption>
+          TL;DR — We introduce an in-context imitation learning method that learns not only to act but also to reason.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section abstract-section">
+    <div class="container is-max-desktop">
+      <h2>Abstract</h2>
+      <p>
+        In-context imitation learning enables robots to adapt to new tasks from a small number of
+        demonstrations without additional parameter updates, but existing approaches typically
+        condition only on state–action trajectories and lack explicit representations of task intent.
+        This limitation hinders performance in complex and ambiguous task settings where
+        the same actions may be consistent with different task intents.
+        We present In-Context Imitation Learning with Visual Reasoning (ICLR), a framework that augments
+        demonstration prompts with structured visual reasoning traces representing anticipated
+        future robot trajectories in image space. Our method jointly learns to generate reasoning traces
+        and low-level actions within a unified autoregressive transformer, enabling the model to mimic
+        not only action prediction but also the reasoning process that leads to those actions.
+        We extensively evaluate ICLR in both simulation and real-world manipulation tasks and
+        demonstrate consistent improvements in success rates and generalization to unseen tasks and
+        novel object configurations compared to other in-context imitation learning methods.
+        These results suggest that incorporating embodied visual reasoning represents a promising direction
+        for enhancing the robustness and generalization of robotic in-context learning systems.
+      </p>
+    </div>
+  </section>
+
+  <section class="section method-section">
+    <div class="container is-max-widescreen">
+      <h2>Method Overview</h2>
+      <figure class="method-figure">
+        <img src="assets/method.png" alt="Method overview" />
+        <figcaption class="method-caption">
+          <div class="method-block"><strong>(A) Reasoning trace generation:</strong> To generate the visual reasoning trace at a given time step, we uniformly sample five third-view images from that time step to the end of the trajectory and use Molmo2 to predict the gripper’s pixel location in each image.</div>
+          <div class="method-block"><strong>(B) Encoders:</strong> Multi-view camera images and proprioceptive states are encoded to state tokens $f_s$ by a state encoder. Visual reasoning traces are embedded by a reasoning encoder to produce reasoning tokens $f_r$, and actions are embedded by an action encoder to produce action tokens $f_a$.</div>
+          <div class="method-block"><strong>(C) Transformer:</strong> Modality-specific tokens are interleaved and fed into a causal transformer, which autoregressively predicts the next reasoning trace followed by the corresponding action. During training, teacher forcing is applied over reasoning and action tokens. In inference, the model first generates a reasoning trace and then produces the action in a closed-loop manner.</div>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section results-section">
+    <div class="container is-max-desktop">
+      <h2>Quantitative Results</h2>
+
+      <div class="subsection">
+        <h3 class="subsection-title">Simulation Results</h3>
+
+        <div class="chart-selector-row">
+          <label for="benchmark-select">Benchmark</label>
+          <div class="select is-rounded is-small">
+            <select id="benchmark-select">
+              <option value="chart-libero-object">LIBERO-Object</option>
+              <option value="chart-libero-kitchen">LIBERO-90 Kitchen</option>
+              <option value="chart-libero-living">LIBERO-90 Living Room</option>
+              <option value="chart-libero-study">LIBERO-90 Study</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="chart-block">
+          <canvas id="sim-chart"></canvas>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">Real-World Results</h3>
+
+        <div class="chart-selector-row">
+          <label for="realworld-select">Benchmark</label>
+          <div class="select is-rounded is-small">
+            <select id="realworld-select">
+              <option value="pick-and-place">Pick-and-Place</option>
+              <option value="poking">Poking</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="chart-block">
+          <canvas id="realworld-chart"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <script src="js/charts.js"></script>
+
+  <section class="section results-section">
+    <div class="container is-max-desktop">
+      <h2>Qualitative Comparisons</h2>
+      <p class="qual-note">All rollouts are shown at 1X speed.</p>
+      <div class="qual-grid">
+        <article class="qual-card">
+          <h4 class="qual-task">Tomato to Grey Bowl</h4>
+          <div class="qual-videos">
+            <div class="qual-video">
+              <span class="qual-label">ICRT</span>
+              <video controls muted loop playsinline preload="metadata">
+                <source src="assets/recordings_website/okay_h264/icrt_tomato_grey_bowl.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="qual-video">
+              <span class="qual-label">Ours</span>
+              <video controls muted loop playsinline preload="metadata">
+                <source src="assets/recordings_website/okay_h264/icrt_visual_trace_mma_tomato_grey_bowl.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </article>
+
+        <article class="qual-card">
+          <h4 class="qual-task">Dumpling to Red Box</h4>
+          <div class="qual-videos">
+            <div class="qual-video">
+              <span class="qual-label">ICRT</span>
+              <video controls muted loop playsinline preload="metadata">
+                <source src="assets/recordings_website/okay_h264/icrt_dumpling_red_box.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="qual-video">
+              <span class="qual-label">Ours</span>
+              <video controls muted loop playsinline preload="metadata">
+                <source src="assets/recordings_website/okay_h264/icrt_visual_trace_mma_dumpling_red_box.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </article>
+
+        <article class="qual-card">
+          <h4 class="qual-task">Zebra to Blue Bowl</h4>
+          <div class="qual-videos">
+            <div class="qual-video">
+              <span class="qual-label">ICRT</span>
+              <video controls muted loop playsinline preload="metadata">
+                <source src="assets/recordings_website/okay_h264/icrt_zebra_blue_bowl.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="qual-video">
+              <span class="qual-label">Ours</span>
+              <video controls muted loop playsinline preload="metadata">
+                <source src="assets/recordings_website/okay_h264/icrt_visual_trace_mma_zebra_blue_bowl.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </article>
+
+        <article class="qual-card">
+          <h4 class="qual-task">Lion to Blue Bowl</h4>
+          <div class="qual-videos">
+            <div class="qual-video">
+              <span class="qual-label">ICRT</span>
+              <video controls muted loop playsinline preload="metadata">
+                <source src="assets/recordings_website/okay_h264/icrt_lion_blue_bowl.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="qual-video">
+              <span class="qual-label">Ours</span>
+              <video controls muted loop playsinline preload="metadata">
+                <source src="assets/recordings_website/okay_h264/icrt_visual_trace_mma_lion_blue_bowl.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </article>
+
+        <article class="qual-card">
+          <h4 class="qual-task">Potato to Grey Bowl</h4>
+          <div class="qual-videos">
+            <div class="qual-video">
+              <span class="qual-label">ICRT</span>
+              <video controls muted loop playsinline preload="metadata">
+                <source src="assets/recordings_website/okay_h264/icrt_potato_grey_bowl.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="qual-video">
+              <span class="qual-label">Ours</span>
+              <video controls muted loop playsinline preload="metadata">
+                <source src="assets/recordings_website/okay_h264/icrt_visual_trace_mma_potato_grey_bowl.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </article>
+
+        <article class="qual-card">
+          <h4 class="qual-task">Hedgehog to Red Box</h4>
+          <div class="qual-videos">
+            <div class="qual-video">
+              <span class="qual-label">ICRT</span>
+              <video controls muted loop playsinline preload="metadata">
+                <source src="assets/recordings_website/okay_h264/icrt_hedgehog_red_box.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="qual-video">
+              <span class="qual-label">Ours</span>
+              <video controls muted loop playsinline preload="metadata">
+                <source src="assets/recordings_website/okay_h264/icrt_visual_trace_mma_hedgehog_red_box.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </article>
+
+        <article class="qual-card">
+          <h4 class="qual-task">Poke Monkey</h4>
+          <div class="qual-videos">
+            <div class="qual-video">
+              <span class="qual-label">ICRT</span>
+              <video controls muted loop playsinline preload="metadata">
+                <source src="assets/recordings_website/okay_h264/icrt_poke_monkey.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="qual-video">
+              <span class="qual-label">Ours</span>
+              <video controls muted loop playsinline preload="metadata">
+                <source src="assets/recordings_website/okay_h264/icrt_visual_trace_mma_poke_monkey.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </article>
+
+        <article class="qual-card">
+          <h4 class="qual-task">Poke Hippo</h4>
+          <div class="qual-videos">
+            <div class="qual-video">
+              <span class="qual-label">ICRT</span>
+              <video controls muted loop playsinline preload="metadata">
+                <source src="assets/recordings_website/okay_h264/icrt_poke_hippo.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="qual-video">
+              <span class="qual-label">Ours</span>
+              <video controls muted loop playsinline preload="metadata">
+                <source src="assets/recordings_website/okay_h264/icrt_visual_trace_mma_poke_hippo.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section results-section">
+    <div class="container is-max-desktop">
+      <h2>More Results</h2>
+      <div id="more-results-carousel" class="carousel results-carousel more-carousel">
+        <div class="item more-slide">
+          <h4 class="more-slide-title">Real: Monkey to Red Box</h4>
+          <video data-auto-loop data-real-video playsinline preload="metadata">
+            <source src="assets/recordings_website/more_h264/icrt_visual_trace_mma_monkey_red_box.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="item more-slide">
+          <h4 class="more-slide-title">Sim: Black Bowl Bottom Drawer</h4>
+          <video data-auto-loop playsinline preload="metadata">
+            <source src="assets/recordings_website/more_h264/black_bowl_bottom_drawer.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="item more-slide">
+          <h4 class="more-slide-title">Real: Tiger to Blue Bowl</h4>
+          <video data-auto-loop data-real-video playsinline preload="metadata">
+            <source src="assets/recordings_website/more_h264/icrt_visual_trace_mma_tiger_blue_bowl.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="item more-slide">
+          <h4 class="more-slide-title">Sim: Salad in Basket</h4>
+          <video data-auto-loop playsinline preload="metadata">
+            <source src="assets/recordings_website/more_h264/salad_in_basket.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="item more-slide">
+          <h4 class="more-slide-title">Real: Poke Potato</h4>
+          <video data-auto-loop playsinline preload="metadata">
+            <source src="assets/recordings_website/more_h264/icrt_visual_trace_mma_poke_potato.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="item more-slide">
+          <h4 class="more-slide-title">Sim: Chocolate Pudding Right of Plate</h4>
+          <video data-auto-loop playsinline preload="metadata">
+            <source src="assets/recordings_website/more_h264/chocolate_pudding_right_of_plate.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="item more-slide">
+          <h4 class="more-slide-title">Real: Poke Jaguar</h4>
+          <video data-auto-loop playsinline preload="metadata">
+            <source src="assets/recordings_website/more_h264/icrt_visual_trace_mma_poke_jaguar.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="item more-slide">
+          <h4 class="more-slide-title">Sim: Book in Left Compartment</h4>
+          <video data-auto-loop playsinline preload="metadata">
+            <source src="assets/recordings_website/more_h264/book_in_left_compartment.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+<script>
+  document.querySelectorAll('.qual-video video').forEach((video) => {
+    video.autoplay = true;
+    video.loop = true;
+    video.muted = true;
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === 'function') {
+      playPromise.catch(() => {});
+    }
+  });
+
+  const getTargetRate = (video) => {
+    const src = video.querySelector('source')?.getAttribute('src') || '';
+    // Only real videos use the icrt_visual_trace_mma_ prefix.
+    return src.includes('icrt_visual_trace_mma_') ? 3.0 : 1.0;
+  };
+
+  const enforceRate = (video) => {
+    const targetRate = getTargetRate(video);
+    if (video.playbackRate !== targetRate) video.playbackRate = targetRate;
+    if (video.defaultPlaybackRate !== targetRate) video.defaultPlaybackRate = targetRate;
+  };
+
+  const initMoreVideos = () => {
+    document.querySelectorAll('#more-results-carousel video[data-auto-loop]').forEach((video) => {
+      video.autoplay = true;
+      video.loop = true;
+      video.muted = true;
+      video.playsInline = true;
+      video.controls = false;
+      video.setAttribute('disablePictureInPicture', '');
+      video.setAttribute('controlsList', 'nodownload nofullscreen noremoteplayback');
+      video.addEventListener('contextmenu', (e) => e.preventDefault());
+      video.addEventListener('loadedmetadata', () => enforceRate(video));
+      video.addEventListener('play', () => enforceRate(video));
+      video.addEventListener('ratechange', () => enforceRate(video));
+      enforceRate(video);
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {});
+      }
+    });
+  };
+
+  initMoreVideos();
+
+  document.addEventListener('DOMContentLoaded', () => {
+    if (!window.bulmaCarousel) return;
+    bulmaCarousel.attach('#more-results-carousel', {
+      slidesToScroll: 1,
+      slidesToShow: 3,
+      loop: true,
+      infinite: true,
+      autoplay: false,
+      navigation: true,
+      pagination: true,
+      pauseOnHover: false,
+      pauseOnFocus: false,
+    });
+    // Re-init after carousel clones slides.
+    setTimeout(initMoreVideos, 50);
+    setTimeout(initMoreVideos, 400);
+  });
+</script>
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website template modified from
+            <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>.
+          </p>
+          <p>
+            This website is licensed under a
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+              Creative Commons Attribution-ShareAlike 4.0 International License
+            </a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
