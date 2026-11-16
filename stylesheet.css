@@ -355,6 +355,12 @@ a {
   border-radius: 2px;
 }
 
+.section-note {
+  margin-top: var(--space-md);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
 /* Publication Cards */
 .publications-grid {
   display: flex;
